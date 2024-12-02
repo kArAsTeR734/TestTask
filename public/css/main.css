@@ -1,0 +1,271 @@
+@import "header.css";
+@import "pagination.css";
+* {
+  font-family: "Inter", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+input, select:focus {
+  outline: none;
+}
+
+.products {
+  margin-top: 15px;
+  min-height: 724px;
+}
+
+table, td, th {
+  border-collapse: collapse;
+  border-bottom: 1px solid rgb(242, 238, 238);
+}
+
+.product_table td {
+  width: 420px;
+  height: 68px;
+  font-size: 14px;
+  font-weight: 400;
+  text-align: left;
+  padding: 0 24px 0 24px;
+}
+
+.product_table th {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+tr:first-child {
+  width: 100%;
+  color: rgb(81, 74, 74);
+  font-size: 13px;
+  font-weight: 600;
+  background: rgb(247, 244, 244);
+  border: none;
+}
+
+.icon {
+  width: 32px;
+  height: 32px;
+  padding-top: 4px;
+  padding-left: 4px;
+  border: 1px solid rgb(242, 238, 238);
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.hide {
+  display: none;
+}
+
+.modal-overlay {
+  background: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.modal-wrapper {
+  width: 400px;
+  height: 820px;
+  background: rgb(255, 255, 255);
+  position: relative;
+  left: 1130px;
+  top: -1px;
+  border: 1px solid rgb(48, 48, 48);
+}
+
+.close-modal-btn {
+  font-size: 15px;
+  color: #dfcece;
+  font-weight: 300;
+  cursor: pointer;
+  position: absolute;
+  top: 45px;
+  left: 350px;
+}
+.close-modal-btn:before {
+  content: " ";
+  position: absolute;
+  width: 24px;
+  height: 4px;
+  background: #131313;
+  transform: rotate(45deg);
+}
+.close-modal-btn:after {
+  transform: rotate(-45deg);
+  content: " ";
+  position: absolute;
+  width: 24px;
+  height: 4px;
+  background: #090909;
+}
+
+.close-btn-wrapper {
+  display: flex;
+}
+
+.icon_house_wrapper {
+  margin-top: 24px;
+  margin-left: 24px;
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  background: rgb(250, 244, 244);
+}
+
+.modal_icon {
+  display: block;
+  margin: auto;
+  padding-top: 12px;
+}
+
+.modal-content {
+  margin: 20px auto;
+  max-width: 210px;
+  width: 100%;
+}
+
+.form {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+
+.authorization {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.authorization_form {
+  display: flex;
+  align-items: center;
+  align-content: space-between;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.modal_info {
+  padding: 16px 24px 24px 24px;
+}
+
+.modal_header {
+  margin-top: 28px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 22px;
+  text-align: left;
+}
+
+.modal_subheader {
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: left;
+}
+
+.add_item_form {
+  margin-top: 14px;
+}
+
+.title, .units, .item, .description {
+  margin-top: 18px;
+}
+
+.title_description, .units_description, .item_description, .description {
+  font-size: 14px;
+  font-weight: 400;
+  text-align: left;
+}
+
+.title_field, .unit_field, .item_field {
+  width: 352px;
+  height: 40px;
+  border: 1px solid rgb(223, 221, 221);
+  border-radius: 4px;
+}
+
+.description_field {
+  border: 1px solid rgb(223, 221, 221);
+  border-radius: 4px;
+  width: 352px;
+  height: 120px;
+  overflow-wrap: break-word;
+  resize: none;
+}
+.description_field:focus {
+  outline: none;
+}
+
+.modal_buttons {
+  display: flex;
+  justify-content: start;
+  height: 64px;
+  margin-top: 80px;
+  padding: 0 24px 24px 24px;
+}
+
+.cancel_btn, .confirm_btn, .change_btn {
+  width: 170px;
+  height: 40px;
+  transition: width 0.4s, height 0.4s;
+}
+.cancel_btn:hover, .confirm_btn:hover, .change_btn:hover {
+  width: 180px;
+  height: 43px;
+}
+
+.confirm_btn {
+  border: none;
+  color: white;
+  margin-left: 12px;
+  border-radius: 6px;
+  background: rgb(168, 87, 87);
+  cursor: pointer;
+}
+
+.cancel_btn {
+  border: none;
+  color: white;
+  border-radius: 6px;
+  background: rgb(81, 74, 74);
+  cursor: pointer;
+}
+
+.change_btn {
+  border: none;
+  color: white;
+  margin-left: 12px;
+  border-radius: 6px;
+  background: rgb(168, 87, 87);
+  cursor: pointer;
+}
+
+input:required:valid {
+  border-color: green;
+}
+
+#titleErrors {
+  padding: 3px;
+  color: #FF0000;
+  display: none;
+}
+
+#unitErrors {
+  padding: 3px;
+  color: #FF0000;
+  display: none;
+}
+
+#codeErrors {
+  padding: 3px;
+  color: #FF0000;
+  display: none;
+}
+
+/*# sourceMappingURL=main.css.map */

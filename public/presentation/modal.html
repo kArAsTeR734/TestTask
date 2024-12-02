@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<section class="create_order">
+    <div class="modal-overlay hide">
+        <div class="modal-wrapper">
+            <div class="icon_house_wrapper">
+                <img src="../icons/houseIcon.png" alt="" class = "modal_icon">
+            </div>
+            <div class="close-btn-wrapper">
+                <div class="close-modal-btn"></div>
+            </div>
+            <div class="modal_info">
+                <div class="modal_header" id = "modal_header"></div>
+                <div class="modal_subheader">Заполните все поля для создания новой номенклатуры</div>
+
+                <form action="#" class="add_item_form" name = "addItem" id = "addElem">
+                    <div class="title">
+                        <p>
+                            <label for="title" class = "title_descr">Название</label><br>
+                            <input type="text" class = "title_field" id="title" name="title" required>
+                        </p>
+                    </div>
+
+                    <div class="units">
+                        <p>
+                            <label for="unit" class = "units_descr">Единица имерения</label><br>
+                            <input type="text" class = "unit_field" id="unit" name="unit" maxlength="2" required>
+                        </p>
+                    </div>
+
+                    <div class="code">
+                        <p>
+                            <label for="code" class = "item_descr">Артикул/код</label><br>
+                            <input type="text" class = "item_field" id="code" name="code" maxlength="7" required>
+                        </p>
+                    </div>
+
+                    <div class="description">
+                        <p>
+                            <label for = "description" class = "description">Описание</label><br>
+                            <textarea class="description_field" id = "description" name = "description"></textarea>
+                        </p>
+                    </div>
+                    <div class="modal_buttons">
+                        <button class = "cancel_btn" type="button" id="cancel" name="submit">Отмена</button>
+                        <button class = "confirm_btn" type="button" id="confirm" name="submit">Подтвердить</button>
+                        <button class = "change_btn hide" type="button" id="change" name="submit">Изменить</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+</html>

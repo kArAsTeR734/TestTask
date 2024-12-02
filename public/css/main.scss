@@ -1,0 +1,14 @@
+*{
+  font-family: 'Inter',sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+input,select:focus{
+  outline:none;
+}
+
+@import "header.css";
+@import "product-table";
+@import "pagination.css";
+@import "modal-createOrder";

@@ -1,0 +1,124 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <title>KIT WAREHOUSE</title>
+
+</head>
+<body>
+<header id = "intro-dm">
+    <h2>Номенкулатура</h2>
+    <div class="item_wrapper">
+        <div class="item_count" id = "counter"></div>
+        <div class="item_count_text">единица</div>
+    </div>
+    <div class="item_search">
+        <input type="text" name="key" placeholder="Поиск по названию" class = "search_input" id ="search" />
+        <input type="button" name="print" value="Поиск" class = "search_button" id = "searchBtn"/>
+    </div>
+    <button class="add_item">
+        <div class="add_item_plus"></div>
+        <div class = "add_new_item" id = "newOrder">Новая позиция</div>
+    </button>
+</header>
+
+<section class = "products">
+    <table class="product_table" id = "product">
+        <tbody id = "tbody">
+        <tr class = "header">
+            <td><strong>Название</strong></td>
+            <td><strong>Единица измерения</strong></td>
+            <td><strong>Артикул/код</strong></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        </tbody>
+    </table>
+</section>
+
+<section class="pagination">
+    <div class="item_pages">
+        <div class="page">
+            1
+        </div>
+        <div class="arrow">
+            <img rel="icon" src="/icons/arrow-right.png" alt="arrow">
+        </div>
+    </div>
+
+    <div class="page_count">
+        <div class="count_text">Показывать по:</div>
+        <select name="pages_count" id="1" class = "selection_list">
+            <option>10</option>
+            <option>20</option>
+            <option>30</option>
+            <option>40</option>
+            <option>50</option>
+        </select>
+    </div>
+</section>
+
+<section class="create_order">
+    <div class="modal-overlay hide">
+        <div class="modal-wrapper">
+            <div class="icon_house_wrapper">
+                <img rel="icon" src="/icons/houseIcon.png" alt="" class = "modal_icon">
+            </div>
+            <div class="close-btn-wrapper">
+                <div class="close-modal-btn"></div>
+            </div>
+            <div class="modal_info">
+                <div class="modal_header" id = "modal_header"></div>
+                <div class="modal_subheader">Заполните все поля для создания новой номенклатуры</div>
+
+                <form action="#" class="add_item_form" name = "addItem" method="post" id = "addItem">
+                    <div class="title">
+                        <p>
+                            <label for="title" class = "title_description">Название</label><br>
+                            <input type="text" class = "title_field" id="title" name="title" minlength="3" maxlength="50" required>
+                            <div id="titleErrors"></div>
+                        </p>
+                    </div>
+
+                    <div class="units">
+                        <p>
+                            <label for="unit" class = "units_description">Единица имерения</label><br>
+                            <input type="text" class = "unit_field" id="unit" name="unit" maxlength="2" minlength="2" required>
+                            <div id="unitErrors"></div>
+                        </p>
+                    </div>
+
+                    <div class="code">
+                        <p>
+                            <label for="code" class = "item_description">Артикул/код</label><br>
+                            <input type="text" class = "item_field" id="code" name="code" maxlength="7" minlength="7" required>
+                            <div id="codeErrors"></div>
+                        </p>
+                    </div>
+
+                    <div class="description">
+                        <p>
+                            <label for = "description" class = "description">Описание</label><br>
+                            <textarea class="description_field" id = "description" name = "description" minlength="20" required></textarea>
+                            <div id="descriptionErrors"></div>
+                        </p>
+                    </div>
+                    <div class="modal_buttons" id="0">
+                        <button class = "cancel_btn" type="submit" id="cancel" name="submit">Отмена</button>
+                        <button class = "confirm_btn" type="submit" id="create" name="submit">Подтвердить</button>
+                        <button class = "change_btn hide" type="submit" id="change" name="submit">Изменить</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script type="module" src="/main.js"></script>
+</body>
+</html>
