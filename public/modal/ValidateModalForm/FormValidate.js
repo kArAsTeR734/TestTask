@@ -74,7 +74,7 @@ export function ValidateCode(event){
     const codeValue = codeField.value;
     if(!codeValue.match(/([0-9]{7})/)){
         event.preventDefault();
-        codeField.setCustomValidity("Укажите 7 цифр в этом поле");
+        codeField.setCustomValidity("Укажите данные в формате 1234567");
         codeErrors.textContent = codeField.validationMessage;
         codeErrors.style.display = "block";
     }

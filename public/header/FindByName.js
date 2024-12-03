@@ -9,7 +9,9 @@ async function TakeItemByName(){
     const title = keyField.value.trim();
     if(title === '')
         return;
+
     window.history.pushState({},'',`/items/${title}`);
+    console.log(title);
     const encodedTitle = encodeURIComponent(title);
     const response = await fetch(`http://localhost:3000/api/wh/itemsName/${encodedTitle}`,{
         method: 'GET',
@@ -21,6 +23,7 @@ async function TakeItemByName(){
         return item
     }
     else{
+        console.log('Ошибка на клиенте');
         console.error('Ошибка:', response.statusText);
     }
 }
@@ -34,24 +37,26 @@ export async function ShowItem(){
         itemTable.deleteRow(1);
     }
     //Добавляем полученный элемент
-    console.log(item);
-    console.log(item.id);
     document.querySelector("tbody").append(CreateRow(item));
 }
+searchBtn.addEventListener("click", ShowItem);
 
 window.addEventListener('popstate',async ()=>{
     if(keyField.value === '')
         return;
     const currentPath = window.location.pathname;
+
+    while (itemTable.rows.length > 1){
+        itemTable.deleteRow(1);
+    }
+
     if(currentPath === '/items'){
-        while (itemTable.rows.length > 1){
-            itemTable.deleteRow(1);
-        }
+        keyField.value = '';
         await getAllUsers();
     }
     const match = currentPath.match(/^\/items\/(.+)$/);
+    console.log(currentPath);
     if(match){
         await ShowItem();
     }
 })
-searchBtn.addEventListener("click", ShowItem);

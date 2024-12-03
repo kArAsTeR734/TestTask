@@ -2,6 +2,7 @@ import {closeModalBtn, closeModal} from '../open-close-modal.js'
 import {form,CreateItemBtn} from "../CreateElement/CreateOrder.js";
 import {getAllUsers} from "../ReadElement/GetAllItems.js";
 import {TakeOneUser} from "./GetUserById.js";
+import {ValidateForm} from "../ValidateModalForm/FormValidate.js";
 
 export const modalHeader = document.querySelector('#modal_header');
 const changeItemBtn = document.querySelector("#tbody");
@@ -43,6 +44,10 @@ export function currentFormData(object){
 
 export async function editUser(event) {
     event.preventDefault();
+    const isFormDataValid = ValidateForm(event);
+    if(!isFormDataValid)
+        return;
+
     const formData = new FormData(form);
     const id = currentItemId;
     console.log(id);

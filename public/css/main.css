@@ -11,7 +11,7 @@ input, select:focus {
 }
 
 .products {
-  margin-top: 15px;
+  margin-top: 35px;
   min-height: 724px;
 }
 
@@ -206,7 +206,7 @@ tr:first-child {
   display: flex;
   justify-content: start;
   height: 64px;
-  margin-top: 80px;
+  margin-top: 90px;
   padding: 0 24px 24px 24px;
 }
 

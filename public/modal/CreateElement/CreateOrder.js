@@ -1,5 +1,5 @@
 import {changeInput, modalHeader} from "../EditElement/ChangeOrder.js";
-import {openModal} from "../open-close-modal.js";
+import {closeModal, openModal} from "../open-close-modal.js";
 import {getCount} from "../../header/ItemCounter.js";
 import {ValidateForm} from "../ValidateModalForm/FormValidate.js";
 
@@ -57,9 +57,9 @@ export function CreateRow(item) {
 
 export async function addUser(event) {
     event.preventDefault();
-    const isValid = ValidateForm(event);
-    console.log(isValid);
-    if(!isValid)
+    const isFormDataValid = ValidateForm(event);
+    console.log(isFormDataValid);
+    if(!isFormDataValid)
         return;
     // Собираем данные из формы
     const formData = new FormData(form);
@@ -88,8 +88,7 @@ export async function addUser(event) {
         const result = await response.json();
         reset();
         document.querySelector("tbody").append(CreateRow(result));
-
-
+        closeModal();
     } catch (error) {
         console.error('Error:', error);
         document.getElementById('response').innerText = 'Error: ' + error.message;

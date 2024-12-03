@@ -7,7 +7,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/css/main.css">
     <title>KIT WAREHOUSE</title>
-
 </head>
 <body>
 <header id = "intro-dm">
@@ -16,10 +15,21 @@
         <div class="item_count" id = "counter"></div>
         <div class="item_count_text">единица</div>
     </div>
-    <div class="item_search">
-        <input type="text" name="key" placeholder="Поиск по названию" class = "search_input" id ="search" />
-        <input type="button" name="print" value="Поиск" class = "search_button" id = "searchBtn"/>
+    <div class="item_actions">
+        <div class="item_search">
+            <input type="text" name="key" placeholder="Поиск по названию" class = "search_input" id ="search" />
+            <input type="button" name="print" value="Поиск" class = "search_button" id = "searchBtn"/>
+        </div>
+        <div class = "sort_settings">
+            <div class="sort_header">Соритровка по названию</div>
+            <select name="sortDetailsByName" id="sortType" class="sortBy">
+                <option value="">--Вид сортировки--</option>
+                <option value = "ASC">По возрастанию</option>
+                <option value = "DESC">По убыванию</option>
+            </select>
+        </div>
     </div>
+
     <button class="add_item">
         <div class="add_item_plus"></div>
         <div class = "add_new_item" id = "newOrder">Новая позиция</div>
@@ -74,13 +84,13 @@
             </div>
             <div class="modal_info">
                 <div class="modal_header" id = "modal_header"></div>
-                <div class="modal_subheader">Заполните все поля для создания новой номенклатуры</div>
+                <div class="modal_subheader">Заполните все поля для создания новой номенкулатуры</div>
 
                 <form action="#" class="add_item_form" name = "addItem" method="post" id = "addItem">
                     <div class="title">
                         <p>
                             <label for="title" class = "title_description">Название</label><br>
-                            <input type="text" class = "title_field" id="title" name="title" minlength="3" maxlength="50" required>
+                            <input type="text" class = "title_field" id="title" name="title" minlength="3" maxlength="50" placeholder="Деталь X" required>
                             <div id="titleErrors"></div>
                         </p>
                     </div>
@@ -88,7 +98,7 @@
                     <div class="units">
                         <p>
                             <label for="unit" class = "units_description">Единица имерения</label><br>
-                            <input type="text" class = "unit_field" id="unit" name="unit" maxlength="2" minlength="2" required>
+                            <input type="text" class = "unit_field" id="unit" name="unit" maxlength="2" minlength="2" pattern="(кг)|(шт)" placeholder="шт/кг" required>
                             <div id="unitErrors"></div>
                         </p>
                     </div>
@@ -96,7 +106,7 @@
                     <div class="code">
                         <p>
                             <label for="code" class = "item_description">Артикул/код</label><br>
-                            <input type="text" class = "item_field" id="code" name="code" maxlength="7" minlength="7" required>
+                            <input type="text" class = "item_field" id="code" name="code" maxlength="7" pattern="([0-9]{7})" minlength="7" placeholder="1234567" required>
                             <div id="codeErrors"></div>
                         </p>
                     </div>
@@ -104,7 +114,7 @@
                     <div class="description">
                         <p>
                             <label for = "description" class = "description">Описание</label><br>
-                            <textarea class="description_field" id = "description" name = "description" minlength="20" required></textarea>
+                            <textarea class="description_field" id = "description" name = "description" minlength="20" placeholder="Описание предмета" required></textarea>
                             <div id="descriptionErrors"></div>
                         </p>
                     </div>

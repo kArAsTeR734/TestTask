@@ -91,12 +91,12 @@ app.get('/api/wh/items/:id/', (req, res) => {
 
 app.get('/api/wh/itemsName/:title', (req, res) => {
     const decodedTitle = decodeURIComponent(req.params.title.trim());
-    let fileteredItems = [...items];
+    let filteredItems = [...items];
     try{
         const item = items.find((u) => u.title.trim().toLowerCase() === decodedTitle.trim().toLowerCase());
-        fileteredItems = item;
+        filteredItems = item;
         if(item)
-            res.end(JSON.stringify(fileteredItems));
+            res.end(JSON.stringify(filteredItems));
         else{
             res.writeHead(404, { "Content-Type": "application/json" });
             res.end(JSON.stringify({ message: `Предмет с названием "${decodedTitle}" не найден!` }));

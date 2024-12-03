@@ -29,14 +29,38 @@ header {
   display: flex;
   height: 34px;
   width: 88px;
-  margin: 25px 10px;
+  margin: 55px 10px;
   border-radius: 5px;
   background-color: rgb(168, 87, 87);
 }
 
-.item_search {
-  margin-left: 700px;
+.sort_settings {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.item_actions {
+  display: flex;
+  flex-direction: column;
+  margin: 70px 0 0 700px;
   padding: 0 10px 0 10px;
+}
+
+.sort_settings {
+  display: flex;
+  margin-top: 15px;
+}
+
+.sort_description {
+  color: black;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
+  float: left;
+}
+
+.item_search {
+  display: flex;
 }
 
 .search_input {
