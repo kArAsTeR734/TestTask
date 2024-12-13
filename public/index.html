@@ -9,25 +9,19 @@
     <title>KIT WAREHOUSE</title>
 </head>
 <body>
-<header id = "intro-dm">
-    <h2>Номенкулатура</h2>
-    <div class="item_wrapper">
-        <div class="item_count" id = "counter"></div>
-        <div class="item_count_text">единица</div>
+<header class="header" id = "intro-dm">
+    <div class="item_header_wrapper">
+        <h2 class = "item_header">Номенкулатура</h2>
+        <div class="counter_wrapper">
+            <div class="item_count" id = "counter">единица</div>
+        </div>
+
     </div>
     <div class="item_actions">
         <div class="item_search">
             <input type="text" name="key" placeholder="Поиск по названию" class = "search_input" id ="search" />
             <input type="button" name="print" value="Поиск" class = "search_button" id = "searchBtn"/>
-        </div>
-        <div class = "sort_settings">
-            <div class="sort_header">Соритровка по названию</div>
-            <select name="sortDetailsByName" id="sortType" class="sortBy">
-                <option value="">--Вид сортировки--</option>
-                <option value = "ASC">По возрастанию</option>
-                <option value = "DESC">По убыванию</option>
-            </select>
-        </div>
+        </div
     </div>
 
     <button class="add_item">

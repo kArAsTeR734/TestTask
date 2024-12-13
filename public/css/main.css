@@ -4,6 +4,7 @@
   font-family: "Inter", sans-serif;
   box-sizing: border-box;
   margin: 0;
+  padding: 0;
 }
 
 input, select:focus {
@@ -11,7 +12,6 @@ input, select:focus {
 }
 
 .products {
-  margin-top: 35px;
   min-height: 724px;
 }
 

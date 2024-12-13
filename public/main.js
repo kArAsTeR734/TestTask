@@ -1,7 +1,6 @@
 import {getAuthToken} from "./GetJWToken.js";
 import {ValidateTitle} from "./modal/ValidateModalForm/FormValidate.js";
 import {ShowItem} from "./header/FindByName.js";
-import {SortItemList,UpdateTable} from "./header/SortItems.js";
 import {TakeUsers,Redirect} from "./modal/ReadElement/GetAllItems.js";
 import {addUser, CreateRow} from "./modal/CreateElement/CreateOrder.js";
 

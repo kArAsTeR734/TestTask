@@ -1,4 +1,4 @@
-header {
+.header {
   height: 108px;
   display: flex;
   flex-direction: row;
@@ -7,31 +7,38 @@ header {
   padding: 24px 20px 44px 20px;
 }
 
-.item_count {
-  margin-top: 10px;
-  margin-left: 10px;
-  color: white;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 16px;
+.item_header {
+  color: rgb(53, 36, 36);
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 120%;
+  letter-spacing: -3%;
+  text-align: left;
 }
 
-.item_count_text {
-  margin-top: 10px;
-  margin-left: 5px;
-  color: white;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 16px;
-}
-
-.item_wrapper {
+.item_header_wrapper {
   display: flex;
-  height: 34px;
-  width: 88px;
+  align-items: center;
+  width: 653px;
+  height: 39px;
   margin: 55px 10px;
   border-radius: 5px;
-  background-color: rgb(168, 87, 87);
+}
+
+.counter_wrapper {
+  margin-left: 8px;
+  width: 84px;
+  height: 24px;
+  border-radius: 4px;
+  background: rgb(168, 87, 87);
+}
+
+.item_count {
+  color: rgb(255, 255, 255);
+  font-size: 13px;
+  font-weight: 400;
+  text-align: center;
+  padding: 4px 8px 4px 8px;
 }
 
 .sort_settings {
@@ -42,7 +49,6 @@ header {
 .item_actions {
   display: flex;
   flex-direction: column;
-  margin: 70px 0 0 700px;
   padding: 0 10px 0 10px;
 }
 
